@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -48,6 +49,11 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+    }
+
+    public void SetVolume(float volume)
+    {
+        mixer.audioMixer.SetFloat("Volume", volume);
     }
 
     // public IEnumerator ChangeFrequency(float startvalue, float endvalue, float duration)

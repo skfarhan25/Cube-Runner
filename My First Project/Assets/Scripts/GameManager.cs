@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -17,7 +18,14 @@ public class GameManager : MonoBehaviour
     public int score;
     const string MIXER_EFFECT = "LowPassFreq";
     public static GameManager instance;
-    private string PlayerName;
+    public string PlayerName;
+    public Text highscore;
+    public int highscoreValue;
+    public GameObject panel;
+    public GameObject OptionsMenu;
+    public PlayfabManager playfabManager;
+    public GameObject NameAndEnter;
+    public GameObject PlayAndHighscore;
 
     void Awake()
     {
@@ -33,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         if (mixer.GetFloat(MIXER_EFFECT, out float value))
         {
             if (value != 22000)
@@ -40,20 +49,40 @@ public class GameManager : MonoBehaviour
                 IncreaseLowBass();
             }
         }
+
+        if (SceneManager.GetActiveScene().buildIndex == 16)
+        {
+            DecreaseLowBass();
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) && GameEnd && Player.isActiveAndEnabled)
+        {
+            LoadNextLevel();
+        }
     }
 
     public void WinGame()
     {
         if (!GameEnd)
         { 
-            IncreaseScore(GetName());
+            IncreaseScore();
             distance.DistanceText.text = goal.position.z.ToString("0");
             Debug.Log("You Win!");
             GameEnd = true;
-            Player.enabled = false;
+            Player.enabled = true;
             distance.enabled = false;
             LevelCompleteUI.SetActive(true);
             DecreaseLowBass();
+            playfabManager.SendLeaderboard(score);
+            // playfabManager.GetLeaderboard();
         }
     }
 
@@ -96,6 +125,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadlLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -126,19 +160,17 @@ public class GameManager : MonoBehaviour
     public void SaveName()
     {
         PlayerName = inputField.text;
+        if (string.IsNullOrEmpty(PlayerName))
+        {
+            PlayerName = "PLY";
+        }
         Debug.Log("ENTERED " + PlayerName);
         DuplicateCheck();
+        playfabManager.Login();
     }
 
     public void DuplicateCheck()
     {
-        if (PlayerName == "") // if empty
-        {
-            PlayerName = "PLY";
-            PlayerPrefs.SetString(PlayerName, PlayerName);
-            Debug.Log("No name entered" + PlayerName);
-            
-        }
         if (PlayerPrefs.HasKey(PlayerName)) // if duplicate
         {
             Debug.Log("Welcome back " + PlayerName);
@@ -146,41 +178,48 @@ public class GameManager : MonoBehaviour
         else // if new
         {
             PlayerPrefs.SetString(PlayerName, PlayerName);
-            Debug.Log("Saved " + PlayerName);
+            PlayerPrefs.SetInt(PlayerName, 0);
+            Debug.Log("New player Saved " + PlayerName);
         }
     }
 
-    [ContextMenu("LoadName")]
+    [ContextMenu("ShowName")]
     public void LoadName()
     {
         Debug.Log("Loaded " + PlayerName);
     }
 
-    [ContextMenu("GetName")]
-    public string GetName()
-    {
-        return PlayerName;
-    }
-
-    public void IncreaseScore(string keyname)
+    public void IncreaseScore()
     {
         score = SceneManager.GetActiveScene().buildIndex;
-        if (PlayerPrefs.HasKey(keyname)) // if key exists
+        if (PlayerPrefs.HasKey(PlayerName)) // If key exists
         {
-            if (PlayerPrefs.GetInt(keyname) < score) // if new highscore
+            if (PlayerPrefs.GetInt(PlayerName) < score) // if new highscore
             {
-                PlayerPrefs.SetInt(keyname, score); // save new highscore
-                Debug.Log("New highscore, Old Player: " + score); 
+                PlayerPrefs.SetInt(PlayerName, score); // save new highscore
+                Debug.Log("New highscore, Old Player: " + score);
+                highscoreValue = score;
+                PlayerPrefs.SetInt("Highscore", highscoreValue);
             }
             else // if not new highscore
             {
-                Debug.Log("Highscore: " + PlayerPrefs.GetInt(keyname)); // load highscore
+                Debug.Log("Highscore: " + PlayerPrefs.GetInt(PlayerName)); // load highscore
             }
         }
         else // if key doesn't exist
         {
-            PlayerPrefs.SetInt(keyname, score); // save new highscore
+            PlayerPrefs.SetInt(PlayerName, score); // save new highscore
             Debug.Log("New highscore, New Player: " + score);
+            highscoreValue = score;
+            PlayerPrefs.SetInt("Highscore", highscoreValue);
+        }
+    }
+
+    public void SetHighscoreText()
+    {
+        if (PlayerPrefs.HasKey(PlayerName))
+        {
+            highscore.text = "Highscore: " + PlayerPrefs.GetInt("Highscore"); 
         }
     }
 
@@ -196,4 +235,25 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         Debug.Log("All PlayerPrefs deleted");
     }
-}    
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void Pause()
+    {
+        if (Time.timeScale == 1)
+        {
+            panel.SetActive(true);
+            OptionsMenu.SetActive(false);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            panel.SetActive(false);
+            OptionsMenu.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
+}

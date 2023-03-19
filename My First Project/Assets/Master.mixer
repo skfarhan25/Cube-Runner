@@ -16,6 +16,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 5f062da181bc3dd46b84dfd023f115bd
+    name: Volume
   - guid: eda05b138a4ee2d4a831ad5cb87c48ae
     name: LowPassFreq
   m_AudioMixerGroupViews:

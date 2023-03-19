@@ -31,7 +31,7 @@ public class SOManager : MonoBehaviour
 
                     CheckIndex();
                 }
-            } 
+            }
             else if (_obstacles[index].position.x <= ActivationPoint)
             {
                 _obstacleScript[index+1].Activate();

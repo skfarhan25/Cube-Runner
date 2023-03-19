@@ -1162,6 +1162,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5131766e9be6d1f419f4998a715b9986, type: 3}
+--- !u!1 &1077621344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4714643948048598905, guid: 5b9cf14256502f447922f871f7d6cea8, type: 3}
+  m_PrefabInstance: {fileID: 6024435889813640873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1115051759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2513,13 +2518,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 885577974}
     - target: {fileID: 7964013701638297421, guid: d7b23e22c3a7d2345ae0eccaa6930769, type: 3}
-      propertyPath: score
+      propertyPath: panel
       value: 
-      objectReference: {fileID: 674556145}
+      objectReference: {fileID: 1077621344}
+    - target: {fileID: 7964013701638297421, guid: d7b23e22c3a7d2345ae0eccaa6930769, type: 3}
+      propertyPath: score
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7964013701638297421, guid: d7b23e22c3a7d2345ae0eccaa6930769, type: 3}
       propertyPath: Player
       value: 
       objectReference: {fileID: 1130659511}
+    - target: {fileID: 7964013701638297421, guid: d7b23e22c3a7d2345ae0eccaa6930769, type: 3}
+      propertyPath: distance
+      value: 
+      objectReference: {fileID: 674556145}
+    - target: {fileID: 7964013701638297421, guid: d7b23e22c3a7d2345ae0eccaa6930769, type: 3}
+      propertyPath: OptionsMenu
+      value: 
+      objectReference: {fileID: 6024435889813640874}
     - target: {fileID: 7964013701638297421, guid: d7b23e22c3a7d2345ae0eccaa6930769, type: 3}
       propertyPath: LevelCompleteUI
       value: 
@@ -2667,6 +2684,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2245738471095778779, guid: 5b9cf14256502f447922f871f7d6cea8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 271253931}
+    - target: {fileID: 2245738471095778779, guid: 5b9cf14256502f447922f871f7d6cea8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 6024435889067291048, guid: 5b9cf14256502f447922f871f7d6cea8, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -2781,6 +2806,11 @@ PrefabInstance:
       objectReference: {fileID: 271253931}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b9cf14256502f447922f871f7d6cea8, type: 3}
+--- !u!1 &6024435889813640874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7510803527485418869, guid: 5b9cf14256502f447922f871f7d6cea8, type: 3}
+  m_PrefabInstance: {fileID: 6024435889813640873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8725023205101986600
 PrefabInstance:
   m_ObjectHideFlags: 0

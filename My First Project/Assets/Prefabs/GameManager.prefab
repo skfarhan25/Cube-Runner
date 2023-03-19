@@ -52,3 +52,11 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 65c052d1c87e26c46a0dec714bf1b78f, type: 2}
   inputField: {fileID: 0}
   score: 0
+  PlayerName: 
+  highscore: {fileID: 0}
+  highscoreValue: 0
+  panel: {fileID: 7566827200988471680, guid: 8ddc3065c3693ad40955fbf061474150, type: 3}
+  OptionsMenu: {fileID: 5932384473119936569, guid: e1a5de6efe8e11e449894b4badace702, type: 3}
+  playfabManager: {fileID: 7397367926557795096, guid: 7708d1d9778e86d4895cb601323c3975, type: 3}
+  NameAndEnter: {fileID: 0}
+  PlayAndHighscore: {fileID: 0}
