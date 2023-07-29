@@ -528,8 +528,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7964013701638297421, guid: d7b23e22c3a7d2345ae0eccaa6930769, type: 3}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadlLevel
-        m_Mode: 3
+        m_MethodName: LoadLastLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

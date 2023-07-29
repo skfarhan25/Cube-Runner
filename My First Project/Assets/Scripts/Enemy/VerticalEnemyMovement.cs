@@ -58,7 +58,6 @@ public class VerticalEnemyMovement : MonoBehaviour
     {
         if (collisionInfo.collider.tag == "Player")
         {
-            
             this.enabled = false;
         }
     }

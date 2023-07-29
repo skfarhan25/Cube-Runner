@@ -1506,7 +1506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4074215035439269567, guid: 6ee0f6db82fa7e44ebbf8432247c1781, type: 3}
       propertyPath: EndPosition.z
-      value: 420
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 4074215035439269567, guid: 6ee0f6db82fa7e44ebbf8432247c1781, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -2818,7 +2818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4074215035439269567, guid: 6ee0f6db82fa7e44ebbf8432247c1781, type: 3}
       propertyPath: EndPosition.z
-      value: 420
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 4074215035439269567, guid: 6ee0f6db82fa7e44ebbf8432247c1781, type: 3}
       propertyPath: curve.m_Curve.Array.size

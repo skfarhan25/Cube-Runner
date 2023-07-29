@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("We Fell Off!");
             GameManager.instance.EndGame();
+            enabled = false;
         }
     }
 }

@@ -1813,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4120661607311133303, guid: 9fd5abfce4591e04cb6a4b6f1f7f5203, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fd5abfce4591e04cb6a4b6f1f7f5203, type: 3}
 --- !u!1001 &262786862
@@ -5025,7 +5029,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdac80e79206bc4a833ab39f86c5995, type: 3}
+  m_Script: {fileID: 11500000, guid: c9e5675f9ce440443b878b46175f73d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &686255441

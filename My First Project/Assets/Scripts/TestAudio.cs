@@ -4,6 +4,9 @@ using System.Collections;
 
 public class TestAudio : MonoBehaviour
 {
+    /*
+    USED FOR TESTING, NOT IN GAME
+    */
     [SerializeField] AudioMixer mixer;
     float freq;
     const string MIXER_EFFECT = "LowPassFreq";

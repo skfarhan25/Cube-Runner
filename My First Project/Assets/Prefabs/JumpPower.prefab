@@ -110,7 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f7b4ec3f9fb5c4c854456a52bf7161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerRB: {fileID: 0}
-  PlayerTransform: {fileID: 0}
+  PlayerRB: {fileID: 1187534357332415668, guid: 56b87c575f86cd443aae3c6bbac5afb1, type: 3}
+  PlayerTransform: {fileID: 1187534357332415671, guid: 56b87c575f86cd443aae3c6bbac5afb1, type: 3}
   JumpHeight: 10
+  DownForce: 0
   duration: 0.5

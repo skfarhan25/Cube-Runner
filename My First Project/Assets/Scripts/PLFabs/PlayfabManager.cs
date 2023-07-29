@@ -54,7 +54,6 @@ public class PlayfabManager : MonoBehaviour
     private void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
     {
         Debug.Log("Display name updated");
-        gameManager.LoadlLevel(16);
     }
 
     private void OnLoginFailure(PlayFabError error)

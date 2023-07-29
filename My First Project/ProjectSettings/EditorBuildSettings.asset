@@ -54,6 +54,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Area_3/A3_Level05.unity
     guid: 5af2511f4939ee44e870ade565ebcb14
   - enabled: 1
+    path: Assets/Scenes/Area_4/A4_Level01.unity
+    guid: 618c1e49c3f3e734792865610345cdde
+  - enabled: 1
+    path: Assets/Scenes/Area_4/A4_Level02.unity
+    guid: 07bbc7e3954a11443903286a0279d8de
+  - enabled: 1
+    path: Assets/Scenes/Area_4/A4_Level03.unity
+    guid: c8f125404b52060439134097969d80d2
+  - enabled: 0
+    path: Assets/Scenes/Area_4/A4_Level04.unity
+    guid: 15a19a16b0aa9b94595681855460b710
+  - enabled: 1
     path: Assets/Scenes/PlayAndHighscore.unity
     guid: d42e191f9b083ab4db30b6909be064cc
   m_configObjects: {}

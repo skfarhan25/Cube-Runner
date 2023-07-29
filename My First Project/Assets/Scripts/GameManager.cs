@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 16)
+        if (SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
         {
             DecreaseLowBass();
         }
@@ -125,9 +125,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LoadlLevel(int level)
+    public void LoadFirstLevel()
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadLastLevel()
+    {
+        SceneManager.LoadScene(SceneManager.sceneCountInBuildSettings - 1);
     }
 
     void Restart()

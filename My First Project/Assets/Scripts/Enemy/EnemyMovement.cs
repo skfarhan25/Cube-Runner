@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private AnimationCurve curve;
     private Transform _transform;
 
-    void Start()
+    void Awake()
     {   
         _transform = transform;
         StartPosition = _transform.position;
