@@ -1,4 +1,3 @@
-# [replace key]
 # Unity-Game
 Deceptively Simple Cube Game
 Made in Unity, with 21 levels full of varied gameplay elements that provide a challenging experience.
